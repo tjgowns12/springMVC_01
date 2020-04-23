@@ -8,20 +8,20 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MyController {
-	@RequestMapping("aaa")//url aaaë¼ë©´ aaaë¥¼ ì°¾ì•„ê°
+	@RequestMapping("aaa")//url aaa¶ó¸é aaa¸¦ Ã£¾Æ°¨
 	public String memberIndex() {
 		
 		return "member/index";
 	}
-	@GetMapping(value="/logout")//requestmapping,getMappingë“±ì´ ìˆë‹¤ PostMA
-	public String memberLogout(Model model) {//springì— ì•ˆì—ìˆëŠ” íƒ€ì…
-		model.addAttribute("logout","ë¡œê·¸ì•„ì›ƒ");//modelì— ê²°ê³¼ê°’ì„ ë‹´ì•„ ë˜ì ¸ì¤€ë‹¤.
+	@GetMapping(value="/logout")//requestmapping,getMappingµîÀÌ ÀÖ´Ù PostMA
+	public String memberLogout(Model model) {//spring¿¡ ¾È¿¡ÀÖ´Â Å¸ÀÔ
+		model.addAttribute("logout","·Î±×¾Æ¿ô");//model¿¡ °á°ú°ªÀ» ´ã¾Æ ´øÁ®ÁØ´Ù.
 		return "/member/logout";
 	}
 	@GetMapping("login")
 	public ModelAndView memberLogin() {
 		ModelAndView mv= new ModelAndView();
-		mv.addObject("login","ë¡œê·¸ì¸ ì„±ê³µ!!");
+		mv.addObject("login","·Î±×ÀÎ ¼º°ø!!");
 		mv.setViewName("member/login");
 		return mv;
 	}

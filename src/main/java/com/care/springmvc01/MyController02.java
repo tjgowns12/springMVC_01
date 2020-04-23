@@ -24,21 +24,21 @@ public class MyController02 {
 		String name=req.getParameter("name");
 		String age=req.getParameter("age");
 		model.addAttribute("name",req.getMethod()+"=>"+name);
-		//req.getMethod()ëŠ” í•´ë‹¹í•˜ëŠ” requestì˜ íƒ€ì…ì´ ë‚˜ì˜¨ë‹¤
+		//req.getMethod()´Â ÇØ´çÇÏ´Â requestÀÇ Å¸ÀÔÀÌ ³ª¿Â´Ù
 		model.addAttribute("age",req.getMethod()+"=>"+age);
 		return "/member02/result";
 		
 	}
 	//@RequestMapping(value="member02/result",method=RequestMethod.POST)
-	//í¬ìŠ¤íŠ¸ë°©ì‹ìœ¼ë¡œ ë„˜ì–´ì˜¨ê±¸ ë°›ì•„ì¤€ë‹¤ .
+	//Æ÷½ºÆ®¹æ½ÄÀ¸·Î ³Ñ¾î¿Â°É ¹Ş¾ÆÁØ´Ù .
 	@PostMapping("member02/result")
-	//postë°©ì‹ìœ¼ë¡œ ë„˜ì–´ì˜¨ê±¸ ë˜‘ê°™ì´ ë°›ì•„ì¤€ë‹¤.
+	//post¹æ½ÄÀ¸·Î ³Ñ¾î¿Â°É ¶È°°ÀÌ ¹Ş¾ÆÁØ´Ù.
 	public String memberResult02(
 			@RequestParam("name") String name,
-//String name=req.getParameter("name");ìœ„ì— ë‚´ìš©ê³¼ ë™ì¼í•¨ requestë¡œ ë°›ì•„ì˜¨ ê°’ì„ String nameì— ë„£ì–´ì¤€ë‹¤ 
+//String name=req.getParameter("name");À§¿¡ ³»¿ë°ú µ¿ÀÏÇÔ request·Î ¹Ş¾Æ¿Â °ªÀ» String name¿¡ ³Ö¾îÁØ´Ù 
 		@RequestParam("age") String age,Model model) {
-		model.addAttribute("name", name+"í¬ìŠ¤íŠ¸");
-		model.addAttribute("age", age+"í¬ìŠ¤íŠ¸");
+		model.addAttribute("name", name+"Æ÷½ºÆ®");
+		model.addAttribute("age", age+"Æ÷½ºÆ®");
 				
 		return "member02/result";
 	}
